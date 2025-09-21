@@ -1,10 +1,14 @@
 /* eslint-disable prettier/prettier */
 import { Controller, Get } from '@nestjs/common';
 
-@Controller('user')
+@Controller('user') // Decorator to define the route prefix
 export class UserController {
   @Get()
-  getUser(): string {
-    return 'This is user endpoint';
+  getUser(): any {
+    return {
+      message: 'User data retrieved successfully',
+      user: { id: 1, name: 'Sakib ahmed', email: 'john.doe@example.com' },
+      success: true,
+    };
   }
 }
